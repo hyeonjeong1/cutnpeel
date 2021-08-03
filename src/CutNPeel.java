@@ -134,7 +134,6 @@ public class CutNPeel {
                 System.out.println((repNum+1) + "th iteration, threshold : " + threshold + ", block number : " + blockLists.size());
             }
         }
-
         // check result
         final double CR = getResult(oriTensor, listOfAttributes);
         final double L_E = (Math.log(tensor.cardinalities[0])+Math.log(tensor.cardinalities[1])+Math.log(tensor.cardinalities[2]))/Math.log(2);
@@ -147,6 +146,9 @@ public class CutNPeel {
                             + "Exhaustiveness : " + String.format("%.4f", CPlusList.size() * L_E) + "("+String.format("%.4f", CPlusList.size()*L_E/tensorCost*100)+"%), "
                             + "Conciseness : " + String.format("%.4f", blockCost) + "(" + String.format("%.4f", blockCost/tensorCost*100) +"%)");
         System.out.println("Compress Rate : " + String.format("%.4f", CR) + "%, Total Running Time : " + (System.currentTimeMillis() - start + 0.0)/1000 + " seconds.");
+
+        System.out.println("\nWriting Outputs..");
+        writeOutput(path, oriTensor, massList);
     }
 
     /**
@@ -415,5 +417,73 @@ public class CutNPeel {
         final double L_e = (Math.log(tensor.cardinalities[0])+Math.log(tensor.cardinalities[1])+Math.log(tensor.cardinalities[2]))/Math.log(2);
         compress_ratio = ((attributeSum+blockNum) * L_I + CPlusList.size() * L_e + CMinusList.size() * L_e + 0.0) / (tensor.omega * L_e) * 100;
         return compress_ratio;
+    }
+
+    private static void writeOutput(String output, Tensor tensor, List<Long> massList) throws IOException{
+        File dir = new File(output);
+        try{
+            dir.mkdir();
+        }
+        catch(Exception e){
+        }
+        
+        String[][] intToStrValue = tensor.intToStrValue;
+        int blockNum = listOfBlockAttributes.size();
+        int[] weight = new int[tensor.dimension];
+        for(int i=0; i < 3; i++){
+            for(int j=i-1; j>=0; j--){
+                weight[i] += tensor.cardinalities[j];
+            }
+        }
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(output + File.separator + "bicliques.txt"));
+
+        for(int blockIndex = 0; blockIndex < blockNum; blockIndex++){
+            final IntOpenHashSet attributeToValues = listOfBlockAttributes.get(blockIndex);
+            List<Integer> dim0 = new LinkedList();
+            List<Integer> dim1 = new LinkedList();
+            List<Integer> dim2 = new LinkedList();
+            for(int value : attributeToValues){
+                if(value >= weight[2]){
+                    dim2.add(value-weight[2]);
+                }
+                else if(value >= weight[1]){
+                    dim1.add(value-weight[1]);
+                }
+                else{
+                    dim0.add(value);
+                }
+            }
+            bw.write("#"+(1+blockIndex)+" size : "+dim0.size()+" X "+dim1.size()+" X "+dim2.size()+" = "+dim0.size()*dim1.size()*dim2.size()+", mass : "+massList.get(blockIndex)+"\n");
+            for(int value : dim0){
+                bw.write(intToStrValue[0][value]+" ");
+            }
+            bw.newLine();
+            for(int value : dim1){
+                bw.write(intToStrValue[1][value]+" ");
+            }
+            bw.newLine();
+            for(int value : dim2){
+                bw.write(intToStrValue[2][value]+" ");
+            }
+            bw.newLine();
+        }
+        bw.close();
+        
+        BufferedWriter miss = new BufferedWriter(new FileWriter(output + File.separator + "missingE.txt"));
+        for(int i = 0; i < CMinusList.size(); i++){
+            final int[] attributes = CMinusList.get(i);
+            miss.write(intToStrValue[0][attributes[0]]+" "+intToStrValue[1][attributes[1]-weight[1]]+" "+intToStrValue[2][attributes[2]-weight[2]]);
+            miss.newLine();
+        }
+        miss.close();
+
+        BufferedWriter remain = new BufferedWriter(new FileWriter(output + File.separator + "remainingE.txt"));
+        for(int i = 0; i < CPlusList.size(); i++){
+            final int[] attributes = CPlusList.get(i);
+            remain.write(intToStrValue[0][attributes[0]]+" "+intToStrValue[1][attributes[1]-weight[1]]+" "+intToStrValue[2][attributes[2]-weight[2]]);
+            remain.newLine();
+        }
+        remain.close();
     }
 }
