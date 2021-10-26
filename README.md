@@ -13,6 +13,6 @@ We summarize the strengths of **CutNPeel** as follows:*
   * **Applicability** : CutNPeel is successfully applicable to lossless graph compression and interesting pattern discovery.
 
 ## Datasets
-|Name|Description|Number of Objects|Number of Edges|Original Source|
-|----------|---------------------------|-------------|---------|-------|
+|Name|Description|Number of Objects|Number of Edges|Processed Dataset|Original Source|
+|:---:|:---:|:---:|:---:|:---:|
 |Enron|sender/receiver/time[week]|140/144/128|11,568|abc|
