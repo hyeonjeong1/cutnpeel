@@ -1,8 +1,7 @@
-# CutNPeel
+# Finding a Concise, Precise, and Exhuastive Set of Near Bi-Cliques in Dynamic Graphs
 
-## Overview
-**CutNPeel** is a fast search algorithm for a high-quality set of near bi-cliques.\
-**CutNPeel** has the following advantages :
+In this work, we consider the problem of finding a concise, precise, and exhaustive set of near bi-cliques in a dynamic graph. 
+We formulate the problem as an optimization problem whose objective combines the three aspects (i.e., conciseness, preciseness, and exhaustiveness) in a systematic way based on the MDL principle. Our algorithmic contribution is to design CutNPeel for the problem. Compared to a widely-used top-down greedy search, CutNPeel reduces the search space and at the same time improves search accuracy, through a novel adaptive re-partitioning scheme. We summarize the strengths of CutNPeel as follows:
   * **High Quality** : CutNPeel provides near bi-cliques o up to 51.2% better quality than the second best one.
   * **Speed** : CutNPeel is up to 68.8× faster than the competitors that is second best in terms of quality.
   * **Scalability** : empirically, CutNPeel scales near linearly with the size of the input graph.
