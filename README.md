@@ -30,3 +30,6 @@ We summarize the strengths of **CutNPeel** as follows:*
 * To run CutNPeel with specified dataset and parametrs, execute following commannd:
 ```
 ./run_cutnpeel.sh input_path threshold_decrement iteration output_path
+```
+## Supplementary Document
+Please see [online appendix](https://github.com/hyeonjeong1/cutnpeel/blob/main/Online%20Appendix.pdf)
