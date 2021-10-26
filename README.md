@@ -14,5 +14,5 @@ We summarize the strengths of **CutNPeel** as follows:*
 
 ## Datasets
 |Name|Description|Number of Objects|Number of Edges|Processed Dataset|Original Source|
-|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 |Enron|sender/receiver/time[week]|140/144/128|11,568|abc|
