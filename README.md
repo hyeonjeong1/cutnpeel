@@ -15,4 +15,7 @@ We summarize the strengths of **CutNPeel** as follows:*
 ## Datasets
 |Name|Description|Number of Objects|Number of Edges|Processed Dataset|Original Source|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Enron|sender/receiver/time[week]|140/144/128|11,568|abc|
+|Enron|sender / receiver / time [week]|140 / 144 / 128|11,568|[here](https://www.dropbox.com/sh/ag4ghglt04g7cg8/AADrC5OD7zQiPWdhDFpJWsuCa?dl=0)|
+|Darpa|Src IP / Dst IP / time [date]|9,484 / 23,398 / 57|140,069|[here](https://www.dropbox.com/sh/ag4ghglt04g7cg8/AADrC5OD7zQiPWdhDFpJWsuCa?dl=0)|
+|DDoS|Src IP / Dst IP / time [second]|9,312 / 9,326 / 3,954|22,844,324|[here](https://www.dropbox.com/sh/ag4ghglt04g7cg8/AADrC5OD7zQiPWdhDFpJWsuCa?dl=0)|
+|DBLP|author / venue / time [year]
