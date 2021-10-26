@@ -23,6 +23,10 @@ We summarize the strengths of **CutNPeel** as follows:*
 |Weeplaces|user / place / time [month]|15,793 / 971,308 / 92|3,970,922|[here](https://www.dropbox.com/sh/ag4ghglt04g7cg8/AADrC5OD7zQiPWdhDFpJWsuCa?dl=0)|
 
 ## How to Run
+* To run demos, execute following command:
 ```
-abc
+./run_cutnpeel.sh example_data.txt 0.9 80 ./
 ```
+* To run CutNPeel with specified dataset and parametrs, execute following commannd:
+```
+./run_cutnpeel.sh input_path threshold_decrement iteration output_path
