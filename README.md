@@ -31,5 +31,7 @@ We summarize the strengths of **CutNPeel** as follows:*
 ```
 ./run_cutnpeel.sh input_path threshold_decrement iteration output_path
 ```
+* For more details, please see [user guide](https://github.com/hyeonjeong1/cutnpeel/blob/main/user_guide.pdf).
+
 ## Supplementary Document
-Please see [online appendix](https://github.com/hyeonjeong1/cutnpeel/blob/main/Online%20Appendix.pdf)
+Please see [online appendix](https://github.com/hyeonjeong1/cutnpeel/blob/main/Online%20Appendix.pdf).
