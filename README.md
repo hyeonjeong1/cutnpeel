@@ -1,4 +1,4 @@
-# Finding a Concise, Precise, and Exhuastive Set of Near Bi-Cliques in Dynamic Graphs (WSDM'22)
+# Finding a Concise, Precise, and Exhaustive Set of Near Bi-Cliques in Dynamic Graphs (WSDM'22)
 
 This repository contains the source code for the paper [Finding a Concise, Precise, and Exhuastive Set of Near Bi-Cliques in Dynamic Graphs](https://github.com/hyeonjeong1/cutnpeel), by Hyeonjeong Shin, Taehyung Kwon, Neil Shah and Kijung Shin, to be presented at [WSDM 2022](https://www.wsdm-conference.org/2022/).
 
