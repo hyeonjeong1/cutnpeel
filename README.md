@@ -7,7 +7,7 @@ We formulate the problem as an optimization problem whose objective combines the
 Our algorithmic contribution is to design **CutNPeel** for the problem.
 Compared to a widely-used top-down greedy search, **CutNPeel** reduces the search space and at the same time improves search accuracy, through a novel adaptive re-partitioning scheme.
 We summarize the strengths of **CutNPeel** as follows:*
-  * **High Quality** : CutNPeel provides near bi-cliques up to 51.2% better quality than the second best one.
+  * **High Quality** : CutNPeel provides near bi-cliques of up to 51.2% better quality than the second best one.
   * **Speed** : CutNPeel is up to 68.8× faster than the competitors that is second best in terms of quality.
   * **Scalability** : empirically, CutNPeel scales near linearly with the size of the input graph.
   * **Applicability** : CutNPeel is successfully applicable to lossless graph compression and interesting pattern discovery.
