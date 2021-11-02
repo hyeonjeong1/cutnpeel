@@ -27,7 +27,7 @@ We summarize the strengths of **CutNPeel** as follows:*
 ```
 ./run_cutnpeel.sh example_data.txt 0.9 80 ./
 ```
-* To run CutNPeel with a specified dataset and parameters, execute the following commannd:
+* To run CutNPeel with a specified dataset and parameters, execute the following command:
 ```
 ./run_cutnpeel.sh input_path threshold_decrement iteration output_path
 ```
