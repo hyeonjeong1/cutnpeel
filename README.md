@@ -23,15 +23,15 @@ We summarize the strengths of **CutNPeel** as follows:*
 |Weeplaces|user / place / time [month]|15,793 / 971,308 / 92|3,970,922|[here](https://www.dropbox.com/sh/ag4ghglt04g7cg8/AADrC5OD7zQiPWdhDFpJWsuCa?dl=0)|[here](https://www.yongliu.org/datasets.html)
 
 ## How to Run
-* To run demos, execute following command:
+* To run demos, execute the following command:
 ```
 ./run_cutnpeel.sh example_data.txt 0.9 80 ./
 ```
-* To run CutNPeel with specified dataset and parametrs, execute following commannd:
+* To run CutNPeel with a specified dataset and parameters, execute the following commannd:
 ```
 ./run_cutnpeel.sh input_path threshold_decrement iteration output_path
 ```
-* For more details, please see [user guide](https://github.com/hyeonjeong1/cutnpeel/blob/main/user_guide.pdf).
+* For more details, please see the [user guide](https://github.com/hyeonjeong1/cutnpeel/blob/main/user_guide.pdf).
 
 ## Supplementary Document
-Please see [online appendix](https://github.com/hyeonjeong1/cutnpeel/blob/main/Online%20Appendix.pdf).
+Please see the [online appendix](https://github.com/hyeonjeong1/cutnpeel/blob/main/Online%20Appendix.pdf).
